@@ -1,0 +1,40 @@
+{
+  "pages":[
+    "pages/home/home",
+    "pages/list/list",
+    "pages/person/person",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "餐饮小程序",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light"
+  },
+
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/home/home",
+      "text": "首页",
+      "iconPath":"image/home.png",
+      "selectedIconPath": "image/homel.png"
+    },
+     {
+      "pagePath": "pages/list/list",
+      "text": "菜单",
+      "iconPath":"image/list.png",
+      "selectedIconPath": "image/listl.png"
+    }
+  ,{
+    "pagePath": "pages/person/person",
+    "text": "个人",
+    "iconPath":"image/person.png",
+    "selectedIconPath": "image/personl.png"
+  }],
+    
+    "color": "#000",
+    "selectedColor": "#f00"
+  }
+}

@@ -1,0 +1,32 @@
+<view class="pages">
+    <image class="topPicture" src="/image/picture1.jpg"></image>
+    <view class="scan">
+        <view class="scanIcon1">
+            <image class="icon1" src="/image/scan.png"></image>
+        </view>
+        <view class="scanText">
+            <text>扫码订单</text>
+        </view>
+        <view class="scanIcon2">
+         <image class="icon2" src="/image/more.png"></image>
+        </view>
+    </view>
+
+    <view class="show">
+        <view class="showLeft">
+            <image class="showPicture" src="/image/showPicture.png"></image>
+        </view>
+        <view class="showRight">
+                <text class="showText">店长推荐</text>
+        </view>
+    </view>
+
+    <view>
+        <image class="picture2" src="/image/picture2.jpg"></image>
+    </view>
+
+    <view class="picture3">
+        <image class="picture3Left" src="/image/picture3.jpg"></image>
+        <image class="picture3Right" src="/image/picture4.jpg"></image>
+    </view>
+</view>
