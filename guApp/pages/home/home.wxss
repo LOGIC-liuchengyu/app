@@ -1,0 +1,100 @@
+.pages{
+    flex-direction: column;
+    display: flex;
+    background-color: rgb(241, 241, 241);
+}
+.topPicture{
+    flex-direction: column;
+    display: flex;
+    width: 375px;
+    height: 90px;
+}
+
+.scan{
+    display: flex;
+    align-items: center;
+    margin-top: 4px;
+    border: 1px,red;
+    width: 100%;
+    height: 46px;
+    background: white;
+}
+.scanIcon1{
+    display: flex;
+    align-content: center;
+    flex-grow: 0;
+    padding-left:10px;
+}
+.scanText{
+    align-items: center;
+    flex-grow: 1;
+}
+.scanIcon2{
+    display: flex;
+    align-content: center;
+    flex-grow: 5;
+    display: end;
+}
+
+.icon1{
+    width: 24px;
+    height:24px;
+    padding-right: 10px;
+
+}
+
+.icon2{
+    width: 24px;
+    height:24px;
+    padding-left: 220px;
+}
+
+.show{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height:50px;
+    background: white;
+    margin-top: 4px;
+}
+.showLeft{   
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex-grow: 1;
+}
+.showRight{
+    display: flex-start;
+    flex-grow: 1;
+}
+.showPicture{
+    width: 30px;
+    height:30px;
+    padding-right: 20px;
+}
+.showText{
+    color: red;
+}
+.picture2{
+    margin-top: 4px;
+    width: 100%;
+    height:215px;
+}
+.picture3{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    /* height:140px; */
+}
+.picture3Left{
+    width: 185px;
+    height:140px;
+} 
+.picture3Right{
+    /* display: flex;
+    flex-direction: row;
+    justify-content: flex-end; */
+    width: 185px;
+    height:140px;
+    padding-left: 5px;
+} 
