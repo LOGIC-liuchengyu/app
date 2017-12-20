@@ -1,0 +1,30 @@
+<view class="pages">
+    <view class="personalInformation">
+        <image class="picture" src="/image/picture5.jpg"></image>
+        <text class="personalName">谷歌</text>
+    </view>
+    <view class="item">
+        <text class="itemLeft textLeft">订单</text>
+        <view class="itemRight">
+             <image class="icon" src="/image/more.png"></image>
+        </view>
+    </view>
+    <view class="item">
+        <text class="itemLeft textLeft" >地址</text>
+        <text class="itemRight textRight">湖北省武汉市洪山区</text>
+    </view>
+    <view class="item">
+        <text class="itemLeft textLeft">服务热线</text>
+        <text class="itemRight textRight">17863672892</text>
+    </view>
+    <view class="item">
+        <text class="itemLeft textLeft">联系人</text>
+        <text class="itemRight textRight">李先生</text>
+    </view>
+    <view class="item">
+        <text class="itemLeft textLeft">关于商家</text>
+        <view class="itemRight textRight">
+            <image class="icon" src="/image/more.png"></image>
+        </view>
+    </view>
+</view>
