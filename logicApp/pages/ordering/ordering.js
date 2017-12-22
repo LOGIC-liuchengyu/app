@@ -19,7 +19,6 @@ Page({
       status: '正在营业',
       grade: 'four-star',
       gradeNumber: '4.8',
-     
       menuList: [{
         title: '热销',
         id: 'list1',
@@ -218,6 +217,7 @@ Page({
     //在没有点餐和点餐的情况下购物车的显示样式
     showShopCarContent: false,
     showMask: false,
+
     chooseGoods: {
       // 饭店id
       restaurant_id: 'renmaid',
@@ -229,6 +229,11 @@ Page({
       allCount: 0
     }
   },
+  /**
+   * 确认订单
+   */
+  
+
   /**
    * 计算消费金额
    */
@@ -296,6 +301,18 @@ Page({
   },
 
   /**
+   * 显示购物车内容
+   */
+  showContent: function showContent() {
+    if (this.data.chooseGoods.money <= 0) return;
+    this.setData({
+      showShopCarContent: !this.data.showShopCarContent,
+      showMask: !this.data.showMask
+    });
+  },
+
+
+  /**
    * 设置右侧滚动栏的位置
    */
   setNeedDistance: function setNeedDistance() {
@@ -309,18 +326,23 @@ Page({
    * 改变menu选择
    * @param e
    */
-
+  choose: function choose(e) {
+    // console.log(e)
+    this.setData({
+      currentmenu: e.currentTarget.dataset.tab
+    });
+  },
 
   /**
    * 改变left menu选择
    * @param e
    */
-
-  /**
-   * 户呼叫服务
-   * @param e
-   */
-
+  leftChoose: function leftChoose(e) {
+    this.setData({
+      currentleftmenu: e.currentTarget.dataset.menu,
+      currentmenuid: e.currentTarget.dataset.menulistid
+    });
+  },
 
   /**
    * 添加商品
