@@ -1,12 +1,37 @@
 <view class="ordering">
   <!--餐馆顶部-->
   <view class="o-top">
-    <image class="o-top-img" src="{{ restaurant.img }}"></image>
+    <image class="o-top-img"  data-statu="open" bindtap="powerDrawer"  src="{{ restaurant.img }}"/>
+    <!--mask-->
+    <view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view>
+    <!--content-->
+    <!--使用animation属性指定需要执行的动画-->
+    <view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">
+
+      <!--drawer content-->
+      <view class="drawer_title">商家信息</view>
+      <view class="restaurant-info">
+        <view class="top">
+          <view><image class="o-top-detailImg" src="{{ restaurant.img }}"/> </view>
+          <view class="top-center">
+            <text class="top-center-name">{{ restaurant.name }}</text>
+            <text class="restaurant-grade {{ restaurant.grade }} iconfont icon-wuxing"></text>
+          </view>
+          <view class="distance">距离{{ restaurant.distance }}m</view>
+        </view>
+        <view class="r-i-address iconfont icon-icglobaltitlebar48iconfontmap">{{ restaurant.address }}</view>
+        <view bindtap="callPhone" class="r-i-tel iconfont icon-dianhua triangle">{{ restaurant.tel }}</view>
+        <view class="r-i-time iconfont icon-shijian">营业时间：{{ restaurant.time }}</view>
+      </view>
+       <view class="btn_ok" bindtap="powerDrawer" data-statu="close">确定</view> 
+    </view>
     <view class="o-top-name">
       {{ restaurant.name }}
+      <image class="table-more_unfold" src="../../images/remind.png"/>
       <text>{{ restaurant.status }}</text>
     </view>
-     <view hidden="{{isCollect}}" class=" default-class {{isCollect ?  'is-active':''}}" bindtap="collect">收藏</view>
+    <!-- </navigator> -->
+    <view hidden="{{isCollect}}" class=" default-class {{isCollect ?  'is-active':''}}" bindtap="collect">收藏</view>
     <view hidden="{{!isCollect}}" class=" default-class {{isCollect ?  'is-active':''}}" bindtap="collect">已收藏</view>
   </view>
 

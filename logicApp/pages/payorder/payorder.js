@@ -204,7 +204,14 @@ Page({
   /**
    * 支付货款
    */
-  payMoney: function payMoney() {
+  goCheckPay: function goCheckOrder(e) {
+    if (this.data.index <= 0) {
+      return wx.showToast({
+        title: '请选择桌号',
+        icon: 'success',
+        mask: true
+      });
+    }
     wx.navigateTo({
       url: '../payResult/payResult'
     });
