@@ -2,4 +2,19 @@
 <view class="container">
   <!--carousel商家推广-->
   <template is="carousel" data="{{ imgUrls }}"></template>
+  <!--nav 导向的内容-->
+   <view class="nav">
+    <navigator url="../ordering/ordering" hover-class="none" class="{{ item.navIcon }}" wx:for="{{ navList }}" wx:key="unique">
+      {{ item.navTitle }}
+    </navigator>
+  </view> 
+  <!--hot-shop 热门商家的广告-->
+  <view class="hot-shop">
+    <view class="slide">热销产品</view>
+    <view class="hot-shop-wrap">
+      <view class="hot-shop-content" wx:for="{{ hotShop }}" wx:key="unique">
+        <image class="hot-shop-img" src="{{ item.img }}"/>
+      </view>
+    </view> 
+  </view> 
 </view>
