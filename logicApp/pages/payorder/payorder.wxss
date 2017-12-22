@@ -1,0 +1,206 @@
+page {
+  background-color: #eee;
+  padding: 24rpx;
+  box-sizing: border-box;
+}
+.payorder .restaurant {
+  font-size: 28rpx;
+  color: #333;
+}
+.payorder .ocunt {
+  line-height: 75rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #999;
+  font-size: 24rpx;
+}
+.payorder .orderList {
+  background-color: #fff;
+  margin: 0 50rpx;
+  position: relative;
+}
+.payorder .orderList .time {
+  position: relative;
+  margin: 0 20rpx;
+  text-align: center;
+  line-height: 70rpx;
+  font-size: 24rpx;
+  color: #999;
+  border-bottom: 1rpx dashed #eee;
+}
+.danhao{
+  position: relative;
+  margin: 0 20rpx;
+  text-align: center;
+  line-height: 70rpx;
+  font-size: 24rpx;
+  color: #999;
+  border-bottom: 1rpx dashed #eee;
+}
+.payorder .orderList .time::after,
+.payorder .orderList .time::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 30rpx;
+  height: 30rpx;
+  background-color: #eee;
+  border-radius: 50%;
+  top: 60rpx;
+}
+.payorder .orderList .time::before {
+  left: -37rpx;
+}
+.payorder .orderList .time::after {
+  right: -37rpx;
+}
+.payorder .orderList .orderList-item-top,
+.payorder .orderList .orderList-item-one {
+  display: flex;
+  justify-content: space-around;
+}
+.payorder .orderList .orderList-item-top > text,
+.payorder .orderList .orderList-item-one > text {
+  width: 33.33%;
+  text-align: center;
+  font-size: 24rpx;
+  color: #999;
+  line-height: 60rpx;
+}
+.payorder .orderList .bottom {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1rpx dashed #eee;
+  line-height: 70rpx;
+  font-size: 24rpx;
+  padding: 0 50rpx;
+  padding-right: 70rpx;
+}
+.payorder .orderList::after,
+.payorder .orderList::before {
+  content: '';
+  position: absolute;
+  top: 0;
+}
+.payorder .orderList::after {
+  width: 110%;
+  height: 10rpx;
+  left: -30rpx;
+  border-radius: 5rpx;
+  background-color: #d4d6d8;
+  z-index: 99;
+}
+.payorder .orderList::before {
+  top: 7rpx;
+  width: 105%;
+  height: 5rpx;
+  left: -15rpx;
+  border-radius: 5rpx;
+  background-color: #adb3b9;
+  z-index: 100;
+}
+.tip {
+  padding: 0 50rpx;
+  text-align: right;
+  font-size: 24rpx;
+  color: #999;
+  line-height: 80rpx;
+}
+.start-pay {
+  position: fixed;
+  bottom: 0;
+  width: 93%;
+  line-height: 70rpx;
+  text-align: center;
+  color: #fff;
+  border-radius: 10rpx;
+  background-color: #f00;
+}
+
+.menu0-r-goods {
+  padding: 25rpx 20rpx 22rpx 14rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+  display: flex;
+}
+.menu0-r-goods image {
+  width: 103rpx;
+  height: 103rpx;
+  margin-right: 29rpx;
+}
+.menu0-r-goods .menu0-r-g {
+  display: flex;
+  flex-direction: column;
+  line-height: 38rpx;
+}
+.menu0-r-goods .menu0-r-g view:nth-child(1) {
+  color: #333;
+  font-size: 26rpx;
+}
+.menu0-r-goods .menu0-r-g view:nth-child(2) {
+  color: #666;
+  font-size: 22rpx;
+}
+.menu0-r-goods .menu0-r-g .menu0-r-price {
+  font-size: 24rpx;
+  color: #f00;
+}
+.shop-car-wrap .shop-car-content .menu0-r-goods {
+  padding: 0 20rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+  display: flex;
+  justify-content: space-around;
+}
+.shop-car-wrap .shop-car-content .menu0-r-goods image {
+  width: 103rpx;
+  height: 103rpx;
+}
+.shop-car-wrap .shop-car-content .menu0-r-goods .menu0-r-g {
+  display: flex;
+  flex-direction: column;
+}
+.shop-car-wrap .shop-car-content .menu0-r-goods .menu0-r-g view:nth-child(1) {
+  color: #333;
+  font-size: 26rpx;
+}
+.shop-car-wrap .shop-car-content .menu0-r-goods .menu0-r-g view:nth-child(2) {
+  color: #666;
+  font-size: 22rpx;
+}
+.shop-car-wrap .shop-car-content .menu0-r-goods .menu0-r-g .menu0-r-price {
+  font-size: 24rpx;
+  color: #f00;
+}
+.shop-car-content-title {
+  line-height: 30rpx;
+  font-size: 20rpx;
+}
+.table{
+  padding: 40px 0px 0px 30px;
+}
+.table-num{
+  margin-right: 20px;
+  font-size: 12px;
+  margin-top: 4px;
+  float: left;
+}
+.table-input{
+  width: 48px;
+  height: 25px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  vertical-align: middle;
+  text-align: center;
+  line-height: 25px;
+  font-size: 12px;
+}
+.table-arrow{
+  width: 30px;
+  height: 25px;
+  margin-left: -1px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  text-align: center;
+  line-height: 35px;
+  vertical-align: middle;
+}
