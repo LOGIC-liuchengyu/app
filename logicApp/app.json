@@ -3,7 +3,8 @@
         "pages/index/index",
         "pages/ordering/ordering",
         "pages/payorder/payorder",
-        "pages/payResult/payResult"
+        "pages/payResult/payResult",
+        "pages/user/user"
 
     ],
     "window": {
