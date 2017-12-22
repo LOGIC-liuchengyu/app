@@ -9,16 +9,19 @@ Page({
    * 页面的初始数据
    */
   data: {
+    showModalStatus: false,
     isCollect: false,
     title: 'ordering',
     restaurant: {
       img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
       name: '武汉理工大学莘子院',
       id: 'remaid',
+      distance: '100',
       address: '武汉理工大学东院',
       tel: '15926396569',
       status: '正在营业',
       grade: 'four-star',
+      time: "08: 00-22: 00",
       gradeNumber: '4.8',
       comment: [{
         content: '服务态度好',
@@ -51,23 +54,23 @@ Page({
           count: '1805',
           good: '173',
           price: '23.5',
-          id: 'list1_1'
+          id: 'list1_1'//有没有这个属性代表能不能购买这个属性，在addorder()方法里面进行判断
         }, {
-            img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+          img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
           name: '红烧鸡肉',
           count: '1805',
           good: '173',
           price: '23.5',
           id: 'list1_2'
         }, {
-            img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+          img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
           name: '红烧肉',
           count: '1805',
           good: '173',
           price: '23.5',
           id: 'list1_3'
         }, {
-            img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+          img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
           name: '红焖羊肉',
           count: '1805',
           good: '173',
@@ -85,21 +88,21 @@ Page({
           price: '23.5',
           id: 'list2_1'
         }, {
-            img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+          img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
           name: '羊肉面',
           count: '1805',
           good: '173',
           price: '23.5',
           id: 'list2_2'
         }, {
-            img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+          img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
           name: '麻婆豆腐',
           count: '1805',
           good: '173',
           price: '23.5',
           id: 'list2_3'
         }, {
-            img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+          img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
           name: '鱼香肉丝',
           count: '1805',
           good: '173',
@@ -114,25 +117,29 @@ Page({
           name: '凉拌黄瓜',
           count: '1805',
           good: '173',
-          price: '23.5'
+          price: '23.5',
+          id: 'list3_1'
         }, {
-            img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+          img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
           name: '醋溜土豆丝',
           count: '1805',
           good: '173',
-          price: '23.5'
+          price: '23.5',
+          id: 'list3_2'
         }, {
-            img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+          img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
           name: '香辣花生米',
           count: '1805',
           good: '173',
-          price: '23.5'
+          price: '23.5',
+          id: 'list3_3'
         }, {
-            img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+          img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
           name: '小葱拌豆腐',
           count: '1805',
           good: '173',
-          price: '23.5'
+          price: '23.5',
+          id: 'list3_4'
         }]
       }, {
         title: '套餐',
@@ -144,19 +151,19 @@ Page({
           good: '173',
           price: '23.5'
         }, {
-            img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+          img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
           name: '红烧羊肉套餐',
           count: '1805',
           good: '173',
           price: '23.5'
         }, {
-            img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+          img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
           name: '黄焖鸡套餐',
           count: '1805',
           good: '173',
           price: '23.5'
         }, {
-            img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+          img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
           name: '土豆牛肉套餐',
           count: '1805',
           good: '173',
@@ -172,7 +179,7 @@ Page({
           good: '173',
           price: '23.5'
         }, {
-            img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+          img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
           name: '雪碧',
           count: '1805',
           good: '173',
@@ -206,25 +213,19 @@ Page({
           good: '173',
           price: '23.5'
         }, {
-            img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+          img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
           name: '红烧牛肉3',
           count: '1805',
           good: '173',
           price: '23.5'
         }, {
-            img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+          img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
           name: '红烧牛肉4',
           count: '1805',
           good: '173',
           price: '23.5'
         }]
       }],
-      // coupon: {
-      //   id: 'code123123',
-      //   delmoney: 10,
-      //   condition: 100,
-      //   time: '2017-12-12'
-      // }
     },
     // 当前的tab
     currentmenu: 1,
@@ -283,8 +284,25 @@ Page({
       allCount: 0
     }
   },
-
-
+  /**
+   * 确认订单
+   */
+  goCheckOrder: function goCheckOrder(e) {
+    if (this.data.chooseGoods.allCount <= 0) {
+      return wx.showToast({
+        title: '您还没有点餐',
+        icon: 'success',
+        mask: true
+      });
+    }
+    let args = this.data.chooseGoods;
+    console.log('-------------测试订单数据----------------');
+    console.log(args);
+    console.log('-------------测试订单数据----------------');
+    wx.navigateTo({
+      url: '../payorder/payorder'
+    });
+  },
   collect: function goCheckOrder(e) {
     var _isCollect = !this.data.isCollect;
     this.setData({
@@ -307,26 +325,6 @@ Page({
   },
 
   /**
-   * 确认订单
-   */
-  goCheckOrder: function goCheckOrder(e) {
-    if (this.data.chooseGoods.allCount <= 0) {
-      return wx.showToast({
-        title: '您还没有点餐',
-        icon: 'success',
-        mask: true
-      });
-    }
-    let args = this.data.chooseGoods;
-    console.log('-------------测试订单数据----------------');
-    console.log(args);
-    console.log('-------------测试订单数据----------------');
-    wx.navigateTo({
-      url: '../payorder/payorder'
-    });
-  },
-
-  /**
    * 计算消费金额
    */
   calculateMoney: function calculateMoney() {
@@ -338,7 +336,6 @@ Page({
       var _iteratorNormalCompletion = true;
       var _didIteratorError = false;
       var _iteratorError = undefined;
-
       try {
         for (var _iterator = menuList[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
           var lists = _step.value;
@@ -426,7 +423,7 @@ Page({
   },
 
   /**
-   * 改变left menu选择
+   * 改变left menu选择 热销 折扣 小份菜 套餐之间的转换
    * @param e
    */
   leftChoose: function leftChoose(e) {
@@ -528,5 +525,42 @@ Page({
       chooseGoods: chooseGoods
     });
     wx.setStorageSync('chooseGoods', this.data.chooseGoods);
+  },
+
+  powerDrawer: function (e) {
+    var currentStatu = e.currentTarget.dataset.statu;
+    this.util(currentStatu)
+  },
+  util: function (currentStatu) {
+    var animation = wx.createAnimation({
+      duration: 200,  //动画时长  
+      timingFunction: "linear", //线性  
+      delay: 0  //0则不延迟  
+    });
+    this.animation = animation;
+    animation.opacity(0).rotateX(-100).step();
+    this.setData({
+      animationData: animation.export()
+    })
+    setTimeout(function () {
+      animation.opacity(1).rotateX(0).step();
+      this.setData({
+        animationData: animation
+      })
+      if (currentStatu == "close") {
+        this.setData(
+          {
+            showModalStatus: false
+          }
+        );
+      }
+    }.bind(this), 200)
+    if (currentStatu == "open") {
+      this.setData(
+        {
+          showModalStatus: true
+        }
+      );
+    }
   }
 });
