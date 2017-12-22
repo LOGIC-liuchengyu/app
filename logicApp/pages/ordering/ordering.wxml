@@ -6,7 +6,8 @@
       {{ restaurant.name }}
       <text>{{ restaurant.status }}</text>
     </view>
-    <view class="o-top-number">收藏</view>
+     <view hidden="{{isCollect}}" class=" default-class {{isCollect ?  'is-active':''}}" bindtap="collect">收藏</view>
+    <view hidden="{{!isCollect}}" class=" default-class {{isCollect ?  'is-active':''}}" bindtap="collect">已收藏</view>
   </view>
 
   <!--中间导航-->
