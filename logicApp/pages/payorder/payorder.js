@@ -1,5 +1,5 @@
 const app = getApp()
-// var util = require('../../utils/util.js');
+var util = require('../../utils/util.js');
 // 创建页面实例对象
 Page({
   data: {
@@ -187,12 +187,12 @@ Page({
     wx.setNavigationBarTitle({
       title: '订单详情'
     });
-    // let _time = util.formatTime(new Date());
-    // let _number = util.getOrderNumber(new Date());
+    let _time = util.formatTime(new Date());
+    let _number = util.getOrderNumber(new Date());
     this.setData({
       chooseGoods: wx.getStorageSync('chooseGoods'),
-      // orderTime: _time,
-      // orderNumber: _number
+      orderTime: _time,
+      orderNumber: _number
     });
   },
   // 下拉选择框
