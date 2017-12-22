@@ -411,6 +411,14 @@ Page({
       currentmenuid: e.currentTarget.dataset.menulistid
     });
   },
+  /**
+   * 拨打电话
+   */
+  callPhone: function callPhone() {
+    wx.makePhoneCall({
+      phoneNumber: this.data.restaurant.tel
+    });
+  },
 
   /**
    * 修改标题栏文字
