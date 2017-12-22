@@ -9,6 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    isCollect: false,
     title: 'ordering',
     restaurant: {
       img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
@@ -282,6 +283,29 @@ Page({
       allCount: 0
     }
   },
+
+
+  collect: function goCheckOrder(e) {
+    var _isCollect = !this.data.isCollect;
+    this.setData({
+      isCollect: _isCollect
+    });
+    if (this.data.isCollect == true) {
+      return wx.showToast({
+        title: '收藏成功',
+        icon: 'success',
+        mask: true
+      });
+    };
+    if (this.data.isCollect == false) {
+      return wx.showToast({
+        title: '取消收藏成功',
+        icon: 'success',
+        mask: true
+      });
+    }
+  },
+
   /**
    * 确认订单
    */

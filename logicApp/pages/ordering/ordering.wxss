@@ -482,6 +482,33 @@
   display: none;
   z-index: 99;
 }
-.active {
+/* .active {
   display: block;
+} */
+
+
+.o-top .default-class {
+  width: 70rpx;
+  background-color: gray;
+  color: #fff;
+  font-size: 22rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  padding: 5rpx 15rpx;
+  border-radius: 30rpx;
+  text-align: center;
+  transform: translate(180rpx, 80rpx);
+}
+
+.o-top .is-active {
+  width: 70rpx;
+  background-color: #f00;
+  color: #fff;
+  font-size: 22rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  padding: 5rpx 15rpx;
+  border-radius: 30rpx;
+  text-align: center;
+  transform: translate(180rpx, 80rpx);
 }
