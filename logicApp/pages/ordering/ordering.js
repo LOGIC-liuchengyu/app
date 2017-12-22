@@ -19,6 +19,28 @@ Page({
       status: '正在营业',
       grade: 'four-star',
       gradeNumber: '4.8',
+      comment: [{
+        content: '服务态度好',
+        number: '932'
+      }, {
+        content: '食材新鲜',
+        number: '932'
+      }, {
+        content: '味道赞',
+        number: '932'
+      }, {
+        content: '一',
+        number: '9132'
+      }, {
+        content: '两个',
+        number: '9132'
+      }, {
+        content: '四个个字',
+        number: '9132'
+      }, {
+        content: '三个字',
+        number: '9132'
+      }],
       menuList: [{
         title: '热销',
         id: 'list1',
@@ -218,7 +240,37 @@ Page({
     showShopCarContent: false,
     showMask: false,
 
-
+    comment: [{
+      username: '186****1234',
+      img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+      grade: 'five-star',
+      time: '2016-5-5',
+      userComment: ['一二三四', '一', '一二三四', '一二', '一二三', '一二三四']
+    }, {
+      username: '186****1234',
+      img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+      grade: 'one-star',
+      time: '2016-5-5',
+      userComment: ['一', '一二', '一二三', '一二三四']
+    }, {
+      username: '186****1234',
+      img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+      grade: 'two-star',
+      time: '2016-5-5',
+      userComment: ['一', '一二', '一二三', '一二三四']
+    }, {
+      username: '186****1234',
+      img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+      grade: 'four-star',
+      time: '2016-5-5',
+      userComment: ['一二三四', '一', '一二三四', '一二', '一二三', '一二三四']
+    }, {
+      username: '186****1234',
+      img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+      grade: 'three-star',
+      time: '2016-5-5',
+      userComment: ['一二三四', '一', '一二三四', '一二', '一二三', '一二三四']
+    }],
     chooseGoods: {
       // 饭店id
       restaurant_id: 'renmaid',
