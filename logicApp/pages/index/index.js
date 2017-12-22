@@ -1,54 +1,43 @@
-//index.js
-//获取应用实例
-const app = getApp()
+'use strict';
 
+// 获取全局应用程序实例对象
+const app = getApp();
+
+// 创建页面实例对象
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    title: 'index',
+    userInfo: null,
+    navList: [{
+      navTitle: '扫描点餐',
+      navIcon: 'iconfont icon-erweima'
+    }],
+    hotShop: [{
+      img: 'https://pbs.twimg.com/media/DOoEOvMWsAEGmQV.jpg:large',
+    },
+      {
+        img: 'https://pbs.twimg.com/media/Cozu1HlVMAAjDXW.jpg:large',
+      },
+      {
+        img: 'http://ossweb-img.qq.com/upload/webplat/info/lol/201608/1470105494_1436653066_5865_imageAddr.jpg',
+      }, {
+        img: 'https://pbs.twimg.com/media/DOoEOvMWsAEGmQV.jpg:large',
+      },
+      {
+        img: 'https://pbs.twimg.com/media/Cozu1HlVMAAjDXW.jpg:large',
+      },
+      {
+        img: 'http://ossweb-img.qq.com/upload/webplat/info/lol/201608/1470105494_1436653066_5865_imageAddr.jpg',
+      }],
+    imgUrls:[      'http://ossweb-img.qq.com/upload/webplat/info/lol/201608/1470105494_1436653066_5865_imageAddr.jpg',
+      'https://pbs.twimg.com/media/DOoEOvMWsAEGmQV.jpg:large', 
+      'https://pbs.twimg.com/media/Cozu1HlVMAAjDXW.jpg:large']
   },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
+  onLoad: function onLoad() {
+    let _this = this;
+  
+    app.getUserInfo().then(function (info) {
+      return _this.setData({ userInfo: info });
+    }).catch(console.info);
   },
-  onLoad: function () {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
-    }
-  },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
-  }
-})
+});

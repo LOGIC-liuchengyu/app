@@ -1,1 +1,5 @@
-<text>this is index</text>
+<import src="../template/template" />
+<view class="container">
+  <!--carousel商家推广-->
+  <template is="carousel" data="{{ imgUrls }}"></template>
+</view>
