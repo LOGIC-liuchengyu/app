@@ -218,6 +218,7 @@ Page({
     showShopCarContent: false,
     showMask: false,
 
+
     chooseGoods: {
       // 饭店id
       restaurant_id: 'renmaid',
@@ -232,7 +233,22 @@ Page({
   /**
    * 确认订单
    */
-  
+  goCheckOrder: function goCheckOrder(e) {
+    if (this.data.chooseGoods.allCount <= 0) {
+      return wx.showToast({
+        title: '您还没有点餐',
+        icon: 'success',
+        mask: true
+      });
+    }
+    let args = this.data.chooseGoods;
+    console.log('-------------测试订单数据----------------');
+    console.log(args);
+    console.log('-------------测试订单数据----------------');
+    wx.navigateTo({
+      url: '../payorder/payorder'
+    });
+  },
 
   /**
    * 计算消费金额
@@ -341,6 +357,33 @@ Page({
     this.setData({
       currentleftmenu: e.currentTarget.dataset.menu,
       currentmenuid: e.currentTarget.dataset.menulistid
+    });
+  },
+
+  /**
+   * 户呼叫服务
+   * @param e
+   */
+  menu1choose: function menu1choose(e) {
+    console.log(e.currentTarget.dataset.tabmenu);
+  },
+
+  /**
+   * 拨打电话
+   */
+  callPhone: function callPhone() {
+    wx.makePhoneCall({
+      phoneNumber: this.data.restaurant.tel
+    });
+  },
+
+  /**
+   * 修改标题栏文字
+   */
+  setNavigatorText: function setNavigatorText() {
+    var that = this;
+    wx.setNavigationBarTitle({
+      title: that.data.restaurant.name
     });
   },
 
