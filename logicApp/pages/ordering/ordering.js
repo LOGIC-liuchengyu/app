@@ -299,19 +299,6 @@ Page({
     }
     return money;
   },
-
-  /**
-   * 显示购物车内容
-   */
-  showContent: function showContent() {
-    if (this.data.chooseGoods.money <= 0) return;
-    this.setData({
-      showShopCarContent: !this.data.showShopCarContent,
-      showMask: !this.data.showMask
-    });
-  },
-
-
   /**
    * 设置右侧滚动栏的位置
    */
