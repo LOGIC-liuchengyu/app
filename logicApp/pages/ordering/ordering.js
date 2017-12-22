@@ -411,6 +411,15 @@ Page({
       currentmenuid: e.currentTarget.dataset.menulistid
     });
   },
+
+  /**
+   * 户呼叫服务
+   * @param e
+   */
+  menu1choose: function menu1choose(e) {
+    console.log(e.currentTarget.dataset.tabmenu);
+  },
+
   /**
    * 拨打电话
    */
