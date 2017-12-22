@@ -35,10 +35,10 @@
   <view class="tip">实付金额以买单时为准</view>
   <view bindtap="payMoney" class="start-pay">去付款</view>
 </view>
-<view class="section">
+<!-- <view class="section">
   <view class="table-num">桌号</view>
   <picker bindchange="bindPickerChange" value="{{index}}" range="{{tables}}">
     <view class="table-input">{{tables[index]}}</view>
     <span class="table-arrow">﹀</span>
   </picker>
-</view>
+</view> -->
