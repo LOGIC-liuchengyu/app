@@ -1,8 +1,1 @@
-# Source
-
-## Auto convert
-
-- js                =>  js
-- xml               =>  wxml
-- {css,less,scss}   =>  wxss
-- json              =>  json
+# 基本完成单店订单及购物车功能，接下来就是细节的完善
